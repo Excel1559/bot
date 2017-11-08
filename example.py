@@ -12,6 +12,8 @@ from follow_protocol import follow_protocol
 from instabot import InstaBot
 from unfollow_protocol import unfollow_protocol
 
+print (os.environ)
+
 bot = InstaBot(
     login=os.environ["INSTAGRAM_USERNAME"],
     password=os.environ["INSTAGRAM_PASSWORD"],
