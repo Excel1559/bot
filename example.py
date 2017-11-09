@@ -5,6 +5,7 @@ import sys
 import time
 from os import environ
 from flask import Flask
+import multiprocessing
 
 try:    
     import thread 
@@ -129,7 +130,9 @@ def startup():
         else:
             print("Wrong mode!")
 
-thread.start_new_thread(startup, ());
+p = multiprocessing.Process(target=startup)
+p.start()
+# thread.start_new_thread(startup, ());
 port = int(os.environ.get('PORT', 5000))
 
 app.run(host='0.0.0.0', port=port)
