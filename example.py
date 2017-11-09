@@ -7,12 +7,6 @@ from os import environ
 from flask import Flask
 app = Flask(__name__)
 
-if __name__ == '__main__':
-    # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
-
-
 
 sys.path.append(os.path.join(sys.path[0], 'src'))
 
@@ -63,6 +57,12 @@ bot = InstaBot(
         'follow', 'follower', 'gain', '.id', '_id', 'bags'
     ],
     unfollow_whitelist=['example_user_1', 'example_user_2'])
+
+if __name__ == '__main__':
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+    
 while True:
 
     #print("# MODE 0 = ORIGINAL MODE BY LEVPASHA")
