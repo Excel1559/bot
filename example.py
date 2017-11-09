@@ -5,9 +5,8 @@ import sys
 import time
 from os import environ
 from flask import Flask
-
 app = Flask(__name__)
-app.run(environ.get('PORT'))
+
 
 
 sys.path.append(os.path.join(sys.path[0], 'src'))
@@ -118,3 +117,5 @@ while True:
 
     else:
         print("Wrong mode!")
+
+app.run(environ.get('PORT'))
