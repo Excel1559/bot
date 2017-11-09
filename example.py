@@ -130,4 +130,6 @@ def startup():
             print("Wrong mode!")
 
 thread.start_new_thread(startup, ());
-app.run(environ.get('PORT'))
+port = int(os.environ.get('PORT', 5000))
+
+app.run(host='0.0.0.0', port=port)
