@@ -3,6 +3,12 @@
 import os
 import sys
 import time
+from os import environ
+from flask import Flask
+
+app = Flask(__name__)
+app.run(environ.get('PORT'))
+
 
 sys.path.append(os.path.join(sys.path[0], 'src'))
 
@@ -11,8 +17,6 @@ from feed_scanner import feed_scanner
 from follow_protocol import follow_protocol
 from instabot import InstaBot
 from unfollow_protocol import unfollow_protocol
-
-print (os.environ)
 
 bot = InstaBot(
     login=os.environ["INSTAGRAM_USERNAME"],
