@@ -5,7 +5,11 @@ import sys
 import time
 from os import environ
 from flask import Flask
-import thread
+
+try:    
+    import thread 
+except ImportError:
+    import _thread as thread
 
 app = Flask(__name__)
 
